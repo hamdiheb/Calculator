@@ -1,16 +1,13 @@
-// function addition() {}
-
-// function multiply(array) {
-//   let sum = 0
-//   array.forEach((element) => {
-//     sum += parseInt(element)
-//   })
-//   return sum
-// }
-
-// function minus() {}
-
-// function divide() {}
+function apply(formula) {
+  const formula_sp = formula.split(/([+\-*/])/)
+  let sum = 0
+  formula_sp.forEach((Element) => {
+    if (typeof parseInt(Element) == 'number') {
+      sum += parseInt(Element)
+    }
+  })
+  console.log(sum)
+}
 
 function main() {
   const one = document.getElementById('one')
@@ -22,14 +19,13 @@ function main() {
   const seven = document.getElementById('seven')
   const eight = document.getElementById('eight')
   const nine = document.getElementById('nine')
-
   const addition_sy = document.getElementById('addition')
   const minus_sy = document.getElementById('minus')
+  const divide_sy = document.getElementById('divide')
+  const multiply_sy = document.getElementById('multiply')
   const equal_sy = document.getElementById('equal')
 
-  const output = document.getElementById('output')
-
-  const array = [
+  const buttons = [
     one,
     two,
     three,
@@ -40,18 +36,20 @@ function main() {
     eight,
     nine,
     addition_sy,
-    equal_sy,
     minus_sy,
+    divide_sy,
+    multiply_sy,
+    equal_sy,
   ]
-  let equation = ''
-  array.forEach((element) => {
-    element.addEventListener('click', (event) => {
-      if (element.textContent != '=') {
-        equation += element.textContent
-        console.log(equation)
+
+  let formula = ''
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (button.textContent == '=') {
+        apply(formula)
       } else {
-        const array = equation.split('+')
-        console.log(multiply(array))
+        formula += button.textContent
+        console.log(formula)
       }
     })
   })
