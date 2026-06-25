@@ -1,0 +1,26 @@
+main {
+  justify-self: center;
+}
+
+.calculator-container {
+  width: 320px;
+  background-color: #16213e;
+}
+
+.calculator-result {
+  border: none;
+}
+
+.grid_container {
+  background-color: #0f3460;
+  display: grid;
+  grid-template-columns: 70px 70px 70px 70px;
+  grid-template-rows: 70px 70px 70px 70px;
+  gap: 12px;
+  grid-template-areas:
+    'box-1 box-2 box-3 box-4'
+    'box-5 box-6 box-7 box-8'
+    'box-9 box-10 box-11 box-12'
+    'box-13 box-14 box-15 box-16'
+    'box-17 box-17 box-18 box-19';
+}
